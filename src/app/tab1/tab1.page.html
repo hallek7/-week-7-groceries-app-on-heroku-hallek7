@@ -1,0 +1,74 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@hallek7 
+SWDV-665
+/
+week-3-groceries-adding-remove-items-domludejesus
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+week-3-groceries-adding-remove-items-domludejesus/src/app/tab1/tab1.page.html
+@domludejesus
+domludejesus Merge branch 'master' of https://github.com/domludejesus/groceries
+Latest commit e7f36b1 18 days ago
+ History
+ 1 contributor
+45 lines (36 sloc)  1.23 KB
+
+<ion-header [translucent]="true">
+  <ion-navbar>
+    <ion-title>
+      <h1>{{title}} </h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <h2> Welcome to Grocery App! </h2>
+  <p> We will be filling items into this Grocery App</p>
+
+  <ion-list>
+    <!-- Sliding item with text options on both sides -->
+    <ion-item-sliding *ngFor="let item of items; let i = index">
+      <ion-item-options side="start">
+        <ion-item-option (click)="Favorite">Favorite</ion-item-option>
+        <ion-item-option color="danger" (click)="removeItem(item,i)">Delete</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item  padding>
+        <ion-label> {{item.name}}</ion-label>
+        <h3> {{item.quantity}}</h3>
+        
+      </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option color="success" (click)="unread(item)">Add Cart </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+    
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addItem(item)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-header>
+
+  
+</ion-content>
+ 

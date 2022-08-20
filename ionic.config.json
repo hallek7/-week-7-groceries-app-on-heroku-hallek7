@@ -1,0 +1,7 @@
+{
+  "name": "week-3-adding-remove-items",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
